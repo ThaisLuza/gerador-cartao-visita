@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Button, Typography, InputLabel } from "@mui/material";
+import { TextField, Button, Typography, InputLabel, Box } from "@mui/material";
 
 const Form: React.FC = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "" });
@@ -18,6 +18,8 @@ const Form: React.FC = () => {
     <form onSubmit={handleSubmit}>
       <InputLabel htmlFor="name">Nome*</InputLabel>
       <TextField
+        sx={{ backgroundColor: "white" }}
+        size="small"
         label="Seu nome aqui"
         name="name"
         value={formData.name}
@@ -26,26 +28,38 @@ const Form: React.FC = () => {
         margin="normal"
         fullWidth
       />
-      <InputLabel htmlFor="name">Telefone*</InputLabel>
-      <TextField
-        label="(00) 0 0000-0000"
-        name="phone"
-        value={formData.email}
-        onChange={handleChange}
-        variant="outlined"
-        margin="normal"
-        fullWidth
-      />
-      <InputLabel htmlFor="name">Email*</InputLabel>
-      <TextField
-        label="nome@email.com"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        variant="outlined"
-        margin="normal"
-        fullWidth
-      />
+      <Box display={"flex"} justifyContent={"space-between"}>
+        <Box>
+          <InputLabel htmlFor="name" sx={{ color: "white" }}>
+            Telefone*
+          </InputLabel>
+          <TextField
+            sx={{ backgroundColor: "white" }}
+            size="small"
+            label="(00) 0 0000-0000"
+            name="phone"
+            value={formData.email}
+            onChange={handleChange}
+            variant="outlined"
+            margin="normal"
+            fullWidth
+          />
+        </Box>
+        <Box>
+          <InputLabel htmlFor="name">Email*</InputLabel>
+          <TextField
+            sx={{ backgroundColor: "white" }}
+            size="small"
+            label="nome@email.com"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            variant="outlined"
+            margin="normal"
+            fullWidth
+          />
+        </Box>
+      </Box>
       <ul>
         <li>
           Ao preencher o formulário, concordo * em receber comunicações de

@@ -15,10 +15,8 @@ function App() {
         alignItems="center"
         justifyContent="center"
         sx={{
-          // Adicionando espaçamento e centralização
           padding: 2,
           textAlign: "center",
-          // Breakpoints para responsividade
           "@media (max-width: 600px)": {
             padding: 1,
           },
@@ -35,12 +33,15 @@ function App() {
           Gerador de Cartão de Visita
         </Typography>
         <Box
-          border={"1px solid black"}
           sx={{
-            maxWidth: "600px", // Define a largura máxima para o Box
-            width: "100%", // Garante que o Box ocupe toda a largura disponível até o maxWidth
-            margin: "0 auto", // Centraliza o Box horizontalmente
-            padding: 2, // Adiciona um pouco de padding interno
+            maxWidth: "600px",
+            width: "100%",
+            margin: "0 auto",
+            padding: 2,
+            "@media (max-width: 360px)": {
+              maxWidth: "90%",
+              padding: 1,
+            },
           }}
         >
           <Typography
@@ -59,14 +60,12 @@ function App() {
       </Box>
       <Box
         display="flex"
-        flexDirection={{ xs: "column", sm: "row" }} // FlexDirection para responsividade
+        flexDirection={{ xs: "column", sm: "row" }}
         alignItems="center"
         justifyContent="center"
         sx={{
           padding: 2,
-          // Adicionando espaçamento
           gap: 2,
-          // Breakpoints para responsividade
           "@media (max-width: 600px)": {
             gap: 1,
           },
@@ -77,7 +76,7 @@ function App() {
           src={workMan}
           alt="workMan"
           sx={{
-            maxWidth: "100%", // Garantir que a imagem não ultrapasse a tela
+            maxWidth: "100%",
             height: "auto",
           }}
         />

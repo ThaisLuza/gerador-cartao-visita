@@ -19,8 +19,8 @@ const Header: React.FC = () => {
           alignItems="center"
           justifyContent="space-between"
           sx={{
-            maxWidth: "1200px", // Limite máximo para o conteúdo
-            mx: "auto", // Centraliza o Box horizontalmente
+            maxWidth: "1200px",
+            mx: "auto",
           }}
         >
           <Box
@@ -28,7 +28,7 @@ const Header: React.FC = () => {
             src={logo}
             alt="Logo"
             sx={{
-              width: { xs: "100px", sm: "147px" }, // Tamanho da imagem para diferentes tamanhos de tela
+              width: { xs: "100px", sm: "147px" },
               height: { xs: "24px", sm: "36px" },
               objectFit: "contain",
             }}
@@ -38,8 +38,8 @@ const Header: React.FC = () => {
             sx={{
               fontFamily: "Darker Grotesque",
               fontWeight: 700,
-              fontSize: { xs: "18px", sm: "24px" }, // Responsivo com base no tamanho da tela
-              textAlign: { xs: "center", sm: "left" }, // Ajusta o alinhamento do texto para pequenas telas
+              fontSize: { xs: "18px", sm: "24px" },
+              textAlign: { xs: "center", sm: "left" },
             }}
           >
             Gerador de Cartão de Visita

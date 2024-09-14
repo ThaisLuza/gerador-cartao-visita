@@ -80,7 +80,7 @@ const Form: React.FC<IForm> = ({ setFormData }) => {
             {...register("phone")}
             sx={{ backgroundColor: "white" }}
             size="small"
-            placeholder="(00) 0 0000-0000"
+            placeholder="(00) 0000-0000"
             margin="normal"
             fullWidth
             error={!!errors.phone}

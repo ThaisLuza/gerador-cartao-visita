@@ -28,7 +28,6 @@ const Intro: React.FC = () => (
     <Box
       sx={{
         maxWidth: "600px",
-        // width: "100%",
         margin: "0 auto",
         padding: 2,
         "@media (max-width: 360px)": {

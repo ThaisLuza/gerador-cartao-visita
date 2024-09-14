@@ -14,8 +14,6 @@ interface IFormInput {
 
 function App() {
   const [formData, setFormData] = useState<IFormInput | null>(null);
-  const [hasFormData, setHasFormData] = useState(false);
-  console.log("hasFormData", hasFormData);
 
   return (
     <MainLayout>

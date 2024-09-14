@@ -1,88 +1,58 @@
-import React from "react";
-import "./App.css";
+import { Box } from "@mui/material";
+import React, { useState, useEffect } from "react";
 import Form from "./components/Form/Form";
-import Header from "./components/Header/Header";
-import { Box, Typography } from "@mui/material";
-import workMan from "./assets/images/landingpage.png";
+import MainLayout from "./components/MainLayout/MainLayout";
+import Intro from "./components/Intro/Intro";
+import workMan from "./assets/images/landingpage1.png";
+import Card from "./components/Card/Card";
+
+interface IFormInput {
+  name: string;
+  phone: string;
+  email: string;
+}
 
 function App() {
+  const [formData, setFormData] = useState<IFormInput | null>(null);
+  const [hasFormData, setHasFormData] = useState(false);
+  console.log("hasFormData", hasFormData);
+
   return (
-    <Box sx={{ backgroundColor: "#6C5AE0" }} height={"100vh"}>
-      <Header />
-      <Box
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        sx={{
-          padding: 2,
-          textAlign: "center",
-          "@media (max-width: 600px)": {
-            padding: 1,
-          },
-        }}
-      >
-        <Typography
-          sx={{
-            color: "white",
-            fontWeight: 700,
-            fontFamily: "Darker Grotesque",
-            fontSize: { xs: "24px", sm: "40px" },
-          }}
-        >
-          Gerador de Cartão de Visita
-        </Typography>
-        <Box
-          sx={{
-            maxWidth: "600px",
-            width: "100%",
-            margin: "0 auto",
-            padding: 2,
-            "@media (max-width: 360px)": {
-              maxWidth: "90%",
-              padding: 1,
-            },
-          }}
-        >
-          <Typography
-            variant="body1"
+    <MainLayout>
+      {!formData ? (
+        <>
+          <Intro />
+          <Box
+            display="flex"
+            flexDirection={{ xs: "column", sm: "row" }}
+            alignItems="center"
+            justifyContent="space-evenly"
             sx={{
-              fontFamily: "Nunito Sans",
-              color: "white",
-              fontWeight: 400,
-              fontSize: { xs: "16px", sm: "20px" },
+              padding: 2,
+              gap: 2,
+              "@media (max-width: 600px)": {
+                gap: 1,
+              },
             }}
           >
-            Crie grátis seu cartão de visita em passos rápidos! Você o insere no
-            Instagram e demais canais digitais.
-          </Typography>
-        </Box>
-      </Box>
-      <Box
-        display="flex"
-        flexDirection={{ xs: "column", sm: "row" }}
-        alignItems="center"
-        justifyContent="center"
-        sx={{
-          padding: 2,
-          gap: 2,
-          "@media (max-width: 600px)": {
-            gap: 1,
-          },
-        }}
-      >
-        <Box
-          component="img"
-          src={workMan}
-          alt="workMan"
-          sx={{
-            maxWidth: "100%",
-            height: "auto",
-          }}
-        />
-        <Form />
-      </Box>
-    </Box>
+            <Box
+              component="img"
+              src={workMan}
+              alt="workMan"
+              sx={{
+                width: { xs: "268px", sm: "25%" },
+                height: { xs: "198px", sm: "auto" },
+                maxWidth: "100%",
+                objectFit: "contain",
+              }}
+            />
+            <Form setFormData={setFormData} />
+          </Box>
+        </>
+      ) : (
+        <Card formData={formData} setFormData={setFormData} />
+      )}
+    </MainLayout>
   );
 }
 

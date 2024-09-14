@@ -4,7 +4,7 @@ import { AppBar, Toolbar, Typography, Box } from "@mui/material";
 
 const Header: React.FC = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ boxShadow: "none" }}>
       <Toolbar
         sx={{
           backgroundColor: "white",
